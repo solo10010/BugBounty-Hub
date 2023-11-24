@@ -1,0 +1,51 @@
+id: wordpress-all-in-one-wp-security-and-firewall
+
+info:
+  name: All-In-One Security (AIOS) – Security and Firewall Detection
+  author: ricardomaia
+  severity: info
+  reference:
+    - https://wordpress.org/plugins/all-in-one-wp-security-and-firewall/
+  metadata:
+    max-request: 1
+    plugin_namespace: all-in-one-wp-security-and-firewall
+    wpscan: https://wpscan.com/plugin/all-in-one-wp-security-and-firewall
+  tags: tech,wordpress,wp-plugin,top-100,top-200
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/wp-content/plugins/all-in-one-wp-security-and-firewall/readme.txt"
+
+    payloads:
+      last_version: helpers/wordpress/plugins/all-in-one-wp-security-and-firewall.txt
+
+    extractors:
+      - type: regex
+        part: body
+        internal: true
+        name: internal_detected_version
+        group: 1
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+
+      - type: regex
+        part: body
+        name: detected_version
+        group: 1
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+
+    matchers-condition: or
+    matchers:
+      - type: dsl
+        name: "outdated_version"
+        dsl:
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+
+# digest: 4a0a00473045022100937a42af9942d8b559094d1bcf6a6d5c51be3d9c8d018fb54ae9e9515198c0110220262aaf245a139a5c13ebb3a396f815eadb406e92c05340cdcf0c4cc646d37fd9:922c64590222798bb761d5b6d8e72950

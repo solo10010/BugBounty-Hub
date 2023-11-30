@@ -1,18 +1,22 @@
 [
   {
-    "ProfileName": "ReflectedValue_rs0n_Append",
+    "ProfileName": "SSTI_solo10010_Append",
     "Name": "",
     "Enabled": true,
     "Scanner": 1,
-    "Author": "rs0n",
+    "Author": "solo10010",
     "Payloads": [
-      "true,rs0n\"\u003e"
+      "true,{{349*349}}",
+      "true,${349*349}",
+      "true,\u003c%\u003d 349*349 %\u003e",
+      "true,${{349*349}}",
+      "true,#{349*349}"
     ],
     "Encoder": [],
     "UrlEncode": false,
     "CharsToUrlEncode": "",
     "Grep": [
-      "true,,rs0n\"\u003e"
+      "true,,121801"
     ],
     "Tags": [
       "All"
@@ -25,7 +29,7 @@
     "contentLength": "",
     "iscontentLength": false,
     "CaseSensitive": false,
-    "ExcludeHTTP": true,
+    "ExcludeHTTP": false,
     "OnlyHTTP": false,
     "IsContentType": false,
     "ContentType": "",
@@ -39,15 +43,15 @@
     "NegativeUrlExtension": false,
     "MatchType": 1,
     "Scope": 0,
-    "RedirType": 4,
+    "RedirType": 0,
     "MaxRedir": 0,
     "payloadPosition": 2,
     "payloadsFile": "",
     "grepsFile": "",
-    "IssueName": "Reflected Value",
-    "IssueSeverity": "Information",
-    "IssueConfidence": "Certain",
-    "IssueDetail": "User-controlled input is being reflected in the server\u0027s response.",
+    "IssueName": "Server-Side Template Injection (SSTI)",
+    "IssueSeverity": "High",
+    "IssueConfidence": "Firm",
+    "IssueDetail": "A server-side template injection occurs when an attacker is able to use native template syntax to inject a malicious payload into a template, which is then executed server-side.\n\nTemplate engines are designed to generate web pages by combining fixed templates with volatile data. Server-side template injection attacks can occur when user input is concatenated directly into a template, rather than passed in as data. This allows attackers to inject arbitrary template directives in order to manipulate the template engine, often enabling them to take complete control of the server.\n\nhttps://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection",
     "RemediationDetail": "",
     "IssueBackground": "",
     "RemediationBackground": "",

@@ -1,18 +1,18 @@
 [
   {
-    "ProfileName": "ReflectedValue_rs0n_Insert",
+    "ProfileName": "ReflectedValue_solo10010_Append",
     "Name": "",
     "Enabled": true,
     "Scanner": 1,
-    "Author": "rs0n",
+    "Author": "solo10010",
     "Payloads": [
-      "true,rs0n\"\u003e"
+      "true,solo10010\"\u003e"
     ],
     "Encoder": [],
     "UrlEncode": false,
     "CharsToUrlEncode": "",
     "Grep": [
-      "true,,rs0n\"\u003e"
+      "true,,solo10010\"\u003e"
     ],
     "Tags": [
       "All"
@@ -41,7 +41,7 @@
     "Scope": 0,
     "RedirType": 4,
     "MaxRedir": 0,
-    "payloadPosition": 3,
+    "payloadPosition": 2,
     "payloadsFile": "",
     "grepsFile": "",
     "IssueName": "Reflected Value",

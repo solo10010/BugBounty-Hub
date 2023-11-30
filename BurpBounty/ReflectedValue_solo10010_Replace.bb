@@ -1,22 +1,18 @@
 [
   {
-    "ProfileName": "SSTI_rs0n_Replace",
+    "ProfileName": "ReflectedValue_solo10010_Replace",
     "Name": "",
     "Enabled": true,
     "Scanner": 1,
-    "Author": "rs0n",
+    "Author": "solo10010",
     "Payloads": [
-      "true,{{349*349}}",
-      "true,${349*349}",
-      "true,\u003c%\u003d 349*349 %\u003e",
-      "true,${{349*349}}",
-      "true,#{349*349}"
+      "true,solo10010\"\u003e"
     ],
     "Encoder": [],
     "UrlEncode": false,
     "CharsToUrlEncode": "",
     "Grep": [
-      "true,,121801"
+      "true,,solo10010\"\u003e"
     ],
     "Tags": [
       "All"
@@ -29,7 +25,7 @@
     "contentLength": "",
     "iscontentLength": false,
     "CaseSensitive": false,
-    "ExcludeHTTP": false,
+    "ExcludeHTTP": true,
     "OnlyHTTP": false,
     "IsContentType": false,
     "ContentType": "",
@@ -43,15 +39,15 @@
     "NegativeUrlExtension": false,
     "MatchType": 1,
     "Scope": 0,
-    "RedirType": 0,
+    "RedirType": 4,
     "MaxRedir": 0,
     "payloadPosition": 1,
     "payloadsFile": "",
     "grepsFile": "",
-    "IssueName": "Server-Side Template Injection (SSTI)",
-    "IssueSeverity": "High",
-    "IssueConfidence": "Firm",
-    "IssueDetail": "A server-side template injection occurs when an attacker is able to use native template syntax to inject a malicious payload into a template, which is then executed server-side.\n\nTemplate engines are designed to generate web pages by combining fixed templates with volatile data. Server-side template injection attacks can occur when user input is concatenated directly into a template, rather than passed in as data. This allows attackers to inject arbitrary template directives in order to manipulate the template engine, often enabling them to take complete control of the server.\n\nhttps://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection",
+    "IssueName": "Reflected Value",
+    "IssueSeverity": "Information",
+    "IssueConfidence": "Certain",
+    "IssueDetail": "User-controlled input is being reflected in the server\u0027s response.",
     "RemediationDetail": "",
     "IssueBackground": "",
     "RemediationBackground": "",

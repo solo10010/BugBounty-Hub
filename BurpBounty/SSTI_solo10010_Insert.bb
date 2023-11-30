@@ -1,10 +1,10 @@
 [
   {
-    "ProfileName": "SSTI_rs0n_Insert",
+    "ProfileName": "SSTI_solo10010_Insert",
     "Name": "",
     "Enabled": true,
     "Scanner": 1,
-    "Author": "rs0n",
+    "Author": "solo10010",
     "Payloads": [
       "true,{{349*349}}",
       "true,${349*349}",
